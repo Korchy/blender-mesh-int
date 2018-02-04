@@ -16,10 +16,11 @@ class MeshIntPanel(bpy.types.Panel):
 
     def draw(self, context):
         self.layout.label('Polygon')
-        # self.layout.operator("mesh_int.polygonrotate", text="Rotate:")
         row = self.layout.row()
         row.operator("mesh_int.polygonrotate", text="Rotate:")
         row.prop(context.window_manager.mesh_int_vars, 'polygonrotatedirection', expand=True)
+        row = self.layout.row()
+        row.operator("mesh_int.polygonrotate_followactive", text="Follow Active")
 
 
 def register():
