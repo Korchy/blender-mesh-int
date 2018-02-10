@@ -5,12 +5,17 @@
 # https://github.com/Korchy/blender-mesh-int
 
 import bpy
-from mathutils import Vector
+
 
 class MeshIntPolygonRotate(bpy.types.Operator):
     bl_idname = 'mesh_int.polygonrotate'
     bl_label = 'Mesh polygon rotation'
     bl_options = {'REGISTER', 'UNDO'}
+
+    direction = bpy.props.BoolProperty(
+        name='direction',
+        default=True  # True = CW, False = CCW
+    )
 
     def execute(self, context):
         if context.active_object:
@@ -19,10 +24,10 @@ class MeshIntPolygonRotate(bpy.types.Operator):
                 bpy.ops.object.mode_set(mode='OBJECT')
             for polygon in bpy.context.active_object.data.polygons:
                 if polygon.select:
-                    if context.window_manager.mesh_int_vars.polygonrotatedirection == 'ccw':
-                        polygon.vertices = polygon.vertices[1:] + polygon.vertices[:1]
-                    else:
+                    if self.direction:
                         polygon.vertices = polygon.vertices[-1:] + polygon.vertices[:-1]
+                    else:
+                        polygon.vertices = polygon.vertices[1:] + polygon.vertices[:1]
             bpy.ops.object.mode_set(mode=activeobjectmode)
         return {'FINISHED'}
 
@@ -48,7 +53,7 @@ class MeshIntPolygonRotateFollowActive(bpy.types.Operator):
                     for i, edge in enumerate(edges):
                         edgedirection = context.active_object.data.vertices[edge[1]].co - context.active_object.data.vertices[edge[0]].co
                         edgedirection.normalize()
-                        angle = edgedirection.dot(polygonactivedirection) + 1   # cos() - from 0 to 2
+                        angle = edgedirection.dot(polygonactivedirection) + 1   # cos()+1 - from 0 to 2
                         if minangle[1] < angle:
                             minangle = [i, angle]
                     polygon.vertices = polygon.vertices[minangle[0]:] + polygon.vertices[:minangle[0]]
@@ -56,25 +61,11 @@ class MeshIntPolygonRotateFollowActive(bpy.types.Operator):
         return {'FINISHED'}
 
 
-class MeshIntVars(bpy.types.PropertyGroup):
-    polygonrotatedirection = bpy.props.EnumProperty(
-        items=[
-            ('cw', '', 'CW', 'LOOP_FORWARDS', 0),
-            ('ccw', '', 'CCW', 'LOOP_BACK', 1)
-        ],
-        default='cw'
-    )
-
-
 def register():
     bpy.utils.register_class(MeshIntPolygonRotate)
-    bpy.utils.register_class(MeshIntVars)
-    bpy.types.WindowManager.mesh_int_vars = bpy.props.PointerProperty(type=MeshIntVars)
     bpy.utils.register_class(MeshIntPolygonRotateFollowActive)
 
 
 def unregister():
     bpy.utils.unregister_class(MeshIntPolygonRotateFollowActive)
-    del bpy.types.WindowManager.mesh_int_vars
-    bpy.utils.unregister_class(MeshIntVars)
     bpy.utils.unregister_class(MeshIntPolygonRotate)
