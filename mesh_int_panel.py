@@ -22,6 +22,8 @@ class MeshIntPanel(bpy.types.Panel):
         row.operator('mesh_int.polygonrotate', text='CCW', icon='LOOP_BACK').direction = False
         col.operator('mesh_int.polygonrotate_followactive', text='Follow Active')
 
+        self.layout.operator('mesh_int.polygonrotate_followactive', text='Follow Active XY').axis = 'XY'
+        self.layout.operator('mesh_int.polygonrotate_followactive', text='Follow Active X').axis = 'X'
 
 def register():
     bpy.utils.register_class(MeshIntPanel)

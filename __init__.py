@@ -18,16 +18,22 @@ bl_info = {
 
 from . import mesh_int
 from . import mesh_int_panel
+from . import edges_int_panel
+from . import edges_int_ops
 
 
 def register():
     mesh_int.register()
     mesh_int_panel.register()
+    edges_int_panel.register()
+    edges_int_ops.register()
 
 
 def unregister():
     mesh_int.unregister()
     mesh_int_panel.unregister()
+    edges_int_panel.unregister()
+    edges_int_ops.unregister()
 
 
 if __name__ == '__main__':
