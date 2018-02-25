@@ -8,7 +8,7 @@ bl_info = {
     'name': 'Mesh-Int',
     'category': 'Mesh',
     'author': 'Nikita Akimov',
-    'version': (0, 0, 0),
+    'version': (1, 0, 0),
     'blender': (2, 79, 0),
     'location': '3D_View window -> T-Panel > Mesh-Int',
     'wiki_url': '',
@@ -16,24 +16,24 @@ bl_info = {
     'description': 'Mesh-Int - some additional tools for working with meshes'
 }
 
-from . import mesh_int
-from . import mesh_int_panel
-from . import edges_int_panel
+from . import polygon_int_ops
+from . import polygon_int_panel
 from . import edges_int_ops
+from . import edges_int_panel
 
 
 def register():
-    mesh_int.register()
-    mesh_int_panel.register()
-    edges_int_panel.register()
+    polygon_int_ops.register()
+    polygon_int_panel.register()
     edges_int_ops.register()
+    edges_int_panel.register()
 
 
 def unregister():
-    mesh_int.unregister()
-    mesh_int_panel.unregister()
-    edges_int_panel.unregister()
+    polygon_int_ops.unregister()
+    polygon_int_panel.unregister()
     edges_int_ops.unregister()
+    edges_int_panel.unregister()
 
 
 if __name__ == '__main__':

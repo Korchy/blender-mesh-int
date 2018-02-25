@@ -5,7 +5,7 @@
 # https://github.com/Korchy/blender-mesh-int
 
 import bpy
-
+from .edges_int_ops import EdgesIntVars
 
 class EdgesIntPanel(bpy.types.Panel):
     bl_idname = 'edges_int.edges_panel'
@@ -15,10 +15,10 @@ class EdgesIntPanel(bpy.types.Panel):
     bl_category = 'Mesh-Int'
 
     def draw(self, context):
-        self.layout.label(text='Get angle between edges:')
+        self.layout.label(text='Get angle between 2 edges:')
         row = self.layout.row()
         row.operator('edges_int.anglebetweenedges', text='Get Angle')
-        row.label(str(context.window_manager.edgesintvars.anglebetweenedges))
+        row.label(str(EdgesIntVars.anglebetweenedges) if EdgesIntVars.anglebetweenedges is not None else '')
 
 
 def register():

@@ -8,7 +8,7 @@ import bpy
 
 
 class MeshIntPanel(bpy.types.Panel):
-    bl_idname = 'mesh_int.polygon_panel'
+    bl_idname = 'polygon_int.polygon_panel'
     bl_label = 'Polygon'
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'TOOLS'
@@ -18,12 +18,10 @@ class MeshIntPanel(bpy.types.Panel):
         self.layout.label('Rotate:')
         col = self.layout.column(align=True)
         row = col.row(align=True)
-        row.operator('mesh_int.polygonrotate', text='CW', icon='LOOP_FORWARDS').direction = True
-        row.operator('mesh_int.polygonrotate', text='CCW', icon='LOOP_BACK').direction = False
-        col.operator('mesh_int.polygonrotate_followactive', text='Follow Active')
+        row.operator('polygon_int.polygonrotate', text='CW', icon='LOOP_FORWARDS').direction = True
+        row.operator('polygon_int.polygonrotate', text='CCW', icon='LOOP_BACK').direction = False
+        col.operator('polygon_int.polygonrotate_followactive', text='Follow Active')
 
-        self.layout.operator('mesh_int.polygonrotate_followactive', text='Follow Active XY').axis = 'XY'
-        self.layout.operator('mesh_int.polygonrotate_followactive', text='Follow Active X').axis = 'X'
 
 def register():
     bpy.utils.register_class(MeshIntPanel)
