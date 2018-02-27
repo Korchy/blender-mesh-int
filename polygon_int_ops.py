@@ -40,8 +40,7 @@ class PolygonIntPolygonRotateFollowActive(bpy.types.Operator):
             ('Direction', 'Direction', '', '', 0),
             ('Projection', 'Projection', '', '', 1)
         ],
-        # default='Direction'
-        default='Projection'
+        default='Direction'
     )
 
     def execute(self, context):

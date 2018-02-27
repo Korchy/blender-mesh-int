@@ -20,7 +20,7 @@ Location: "3D_View" window - T-Panel - Mesh-Int
 
 Current version
 -
-1.0.0.
+1.0.2.
 
 Tested with Blender versions
 -
@@ -33,5 +33,5 @@ Installation
 
 Version history
 -
-1.0.0.
+1.0.
 - This release
