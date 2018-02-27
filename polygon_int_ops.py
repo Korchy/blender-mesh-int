@@ -26,6 +26,7 @@ class PolygonIntPolygonRotate(bpy.types.Operator):
             for polygon in context.active_object.data.polygons:
                 if polygon.select:
                     PolygonInt.rotatepolygon(context, polygon, self.direction, 1)
+            context.active_object.data.update()
             bpy.ops.object.mode_set(mode=activeobjectmode)
         return {'FINISHED'}
 
@@ -53,6 +54,7 @@ class PolygonIntPolygonRotateFollowActive(bpy.types.Operator):
                 PolygonInt.followpolygondirectionbyactive(context, context.active_object.data.polygons[polygonactiveindex])
             elif self.mode == 'Projection':
                 PolygonInt.followpolygondirectionbyactiveproj(context, context.active_object.data.polygons[polygonactiveindex])
+            context.active_object.data.update()
             bpy.ops.object.mode_set(mode=activeobjectmode)
         return {'FINISHED'}
 
