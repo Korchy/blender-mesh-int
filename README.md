@@ -3,7 +3,7 @@ Blender add-on with some extended functionality for working with Meshes.
 
 Author: Nikita Akimov interplanety@interplanety.org
 
-<a href="">Add-on web site</a>
+<a href="https://b3d.interplanety.org/en/blender-add-on-mesh-int/">Add-on web site</a>
 
 Functionality
 -
