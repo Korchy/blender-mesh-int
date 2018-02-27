@@ -8,7 +8,7 @@ bl_info = {
     'name': 'Mesh-Int',
     'category': 'Mesh',
     'author': 'Nikita Akimov',
-    'version': (1, 0, 2),
+    'version': (1, 0, 3),
     'blender': (2, 79, 0),
     'location': '3D_View window -> T-Panel > Mesh-Int',
     'wiki_url': 'https://b3d.interplanety.org/en/blender-add-on-mesh-int/',

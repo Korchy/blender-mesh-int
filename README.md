@@ -12,15 +12,19 @@ Location: "3D_View" window - T-Panel - Mesh-Int
 **Polygons**
 
 - Rotate selected polygons around their normal Z-axis (CW and CCW)
-- "Follw active" rotates all selected mesh polygons follow the active
+- "Follow active" rotates all selected mesh polygons follow the active
+
+<img src="https://b3d.interplanety.org/wp-content/upload_content/2018/02/02.gif" title="Sample 1">
 
 **Edges**
 
 - Take the global angle between two selected mesh edges
 
+<img src="https://b3d.interplanety.org/wp-content/upload_content/2018/02/01.gif" title="Sample 1">
+
 Current version
 -
-1.0.2.
+1.0.3.
 
 Tested with Blender versions
 -
