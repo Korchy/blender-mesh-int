@@ -3,7 +3,7 @@ Blender add-on with some extended functionality for working with Meshes.
 
 Author: Nikita Akimov interplanety@interplanety.org
 
-<a href="">Add-on web site</a>
+<a href="https://b3d.interplanety.org/en/blender-add-on-mesh-int/">Add-on web site</a>
 
 Functionality
 -
@@ -22,9 +22,14 @@ Location: "3D_View" window - T-Panel - Mesh-Int
 
 <img src="https://b3d.interplanety.org/wp-content/upload_content/2018/02/01.gif" title="Sample 1">
 
+**Selection**
+
+- Select the whole parents chain of the active object
+- Select the whole children chain of the active object
+
 Current version
 -
-1.0.4.
+1.1.1.
 
 Tested with Blender versions
 -
@@ -37,5 +42,8 @@ Installation
 
 Version history
 -
+1.1.
+- Added selection of the whole parents/children chains
+
 1.0.
 - This release

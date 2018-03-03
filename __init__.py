@@ -20,9 +20,11 @@ from . import polygon_int_ops
 from . import polygon_int_panel
 from . import edges_int_ops
 from . import edges_int_panel
+from . import selection_int_ops
 
 
 def register():
+    selection_int_ops.register()
     polygon_int_ops.register()
     polygon_int_panel.register()
     edges_int_ops.register()
@@ -34,6 +36,7 @@ def unregister():
     polygon_int_panel.unregister()
     edges_int_ops.unregister()
     edges_int_panel.unregister()
+    selection_int_ops.unregister()
 
 
 if __name__ == '__main__':
