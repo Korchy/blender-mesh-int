@@ -20,16 +20,18 @@ Location: "3D_View" window - T-Panel - Mesh-Int
 
 - Take the global angle between two selected mesh edges
 
-<img src="https://b3d.interplanety.org/wp-content/upload_content/2018/02/01.gif" title="Sample 1">
+<img src="https://b3d.interplanety.org/wp-content/upload_content/2018/02/01.gif" title="Sample 2">
 
-**Selection**
+**Selection Instruments**
 
-- Select the whole parents chain of the active object
+- Select the whole parent chain of the active object
 - Select the whole children chain of the active object
+
+<img src="https://b3d.interplanety.org/wp-content/upload_content/2018/03/03.gif" title="Sample 3">
 
 Current version
 -
-1.1.1.
+1.1.4.
 
 Tested with Blender versions
 -

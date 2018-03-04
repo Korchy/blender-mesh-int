@@ -54,6 +54,7 @@ def register():
     if kc:
         km = kc.keymaps.new(name='Object Mode', space_type='EMPTY')
         kmi = km.keymap_items.new(SelectionIntSelectParents.bl_idname, 'LEFT_BRACKET', 'PRESS', ctrl=True)
+        selection_int_keymaps.append((km, kmi))
         kmi = km.keymap_items.new(SelectionIntSelectChildrens.bl_idname, 'RIGHT_BRACKET', 'PRESS', ctrl=True)
         selection_int_keymaps.append((km, kmi))
 
