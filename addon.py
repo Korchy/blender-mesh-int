@@ -2,7 +2,7 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#   https://github.com/Korchy/blender_hdri_bruteforce
+#   https://github.com/Korchy/blender-mesh-int
 
 
 import json
